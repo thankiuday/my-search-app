@@ -1,6 +1,6 @@
-import  express  from 'express';
-import  fetch  from 'node-fetch'; // Import node-fetch for server-side fetch
-import  cors  from 'cors';
+import express from 'express';
+import fetch from 'node-fetch'; // Import node-fetch for server-side fetch
+import cors from 'cors';
 import dotenv from 'dotenv';
 
 dotenv.config(); // This loads environment variables from .env
@@ -10,11 +10,9 @@ const port = 5000;
 // Use CORS to allow cross-origin requests
 app.use(cors());
 
-const YOUTUBE_API_KEY =  process.env.YOUTUBE_API_KEY;
-const GOOGLE_CUSTOM_SEARCH_API_KEY =  process.env.GOOGLE_CUSTOM_SEARCH_API_KEY; 
-const GOOGLE_CUSTOM_SEARCH_ENGINE_ID = '32df8e72bf01046b3'; 
-console.log(YOUTUBE_API_KEY)
-console.log(GOOGLE_CUSTOM_SEARCH_API_KEY)
+const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
+const GOOGLE_CUSTOM_SEARCH_API_KEY = process.env.GOOGLE_CUSTOM_SEARCH_API_KEY;
+const GOOGLE_CUSTOM_SEARCH_ENGINE_ID = '32df8e72bf01046b3';
 // Endpoint to handle search requests
 app.get('/search', async (req, res) => {
     const searchTerm = req.query.query;

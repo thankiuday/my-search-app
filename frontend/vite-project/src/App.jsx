@@ -12,10 +12,9 @@ function App() {
   const [selectedFilter, setSelectedFilter] = useState('All'); // State to store selected filter
   const [selectedSort, setSelectedSort] = useState('views'); // State to store selected sort option
 
-  const API_KEY = 'AIzaSyB9gLacQK2p84og3Rx1dcE8cctXdeZ2hEw'
-  const GOOGLE_CUSTOM_SEARCH_API_KEY = 'AIzaSyAGi7ow1Ntq5YAX3ZYbC013f6iO3QiE28Y';
-  console.log(API_KEY)
-  console.log(GOOGLE_CUSTOM_SEARCH_API_KEY)
+  const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
+  const GOOGLE_CUSTOM_SEARCH_API_KEY = import.meta.env.VITE_GOOGLE_CUSTOM_SEARCH_API_KEY;
+  ;
   // Fetch YouTube Video Data with Statistics (likes, views)
   const fetchYouTubeVideoStats = async (videoIds) => {
     const videoStatsUrl = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoIds.join(',')}&key=${API_KEY}`;
